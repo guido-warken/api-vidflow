@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const fs = require("fs");
 
-const videosData = require("./data/videos.json");
+const videosData = require("../data/videos.json");
 
 const envFile = `.env.${process.env.NODE_ENV || "development"}`;
 
@@ -42,4 +42,4 @@ app.post("/api/videos", (request, response) => {
   response.status(201);
 });
 
-app.listen(3000, () => console.log("Server is listening on port 3000"));
+module.exports = app;
